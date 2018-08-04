@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FXMLController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.hgrow="SOMETIMES" GridPane.vgrow="SOMETIMES">
+        <tabs>
+          <Tab closable="false" text="Current">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="914.0">
+                     <children>
+                        <Label fx:id="cityNameValueLabel" layoutX="227.0" layoutY="31.0" text="Wybierz miasto" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="25.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="temperatureValueLabel" layoutX="228.0" layoutY="42.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="100.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <VBox fx:id="weatherValuesVBox" layoutX="412.0" layoutY="47.0" prefHeight="286.0" prefWidth="100.0" spacing="20.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="100.0">
+                           <children>
+                              <Label fx:id="pressureValueLabel">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="humidityValueLabel">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="windSpeedValueLabel">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="rainValueLabel">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="cloudsValueLabel">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="snowValueLabel">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="285.0" layoutY="269.0" prefHeight="343.0" prefWidth="152.0" spacing="20.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="100.0">
+                           <children>
+                              <Label fx:id="pressureLabel" text="Ciśnienie">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="humidityLabel" text="Wilgotność">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="windSpeedLabel" text="Prędkość wiatru">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="rainLabel" text="Opady">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="cloudsLabel" text="Zachmurzenie">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="snowLabel" text="Śnieg">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="weatherDescriptionVbox" layoutX="125.0" layoutY="120.0" maxHeight="1.7976931348623157E308" maxWidth="265.0" prefHeight="175.0" prefWidth="265.0" spacing="20.0" AnchorPane.leftAnchor="125.0" AnchorPane.topAnchor="120.0">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <Label fx:id="dateLabel" layoutX="252.0" layoutY="60.0" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="60.0" />
+                        <Button fx:id="saveToFileBtn" layoutX="898.0" layoutY="25.0" mnemonicParsing="false" text="Zapisz do pliku" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab fx:id="firstTab" closable="false" text="Five Days Forecast">
+               <content>
+                  <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="1145.0">
+                     <content>
+                        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="765.0" prefWidth="1024.0">
+                           <children>
+                              <Label fx:id="cityNameValueFiveDaysLabel" layoutX="42.0" layoutY="32.0" text="Brak" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="35.0">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="46.0" layoutY="113.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="88.0" prefWidth="971.0" spacing="25.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="115.0">
+                                 <children>
+                                    <VBox fx:id="dateFiveDaysVBox" prefHeight="88.0" prefWidth="137.0" spacing="20.0">
+                                       <children>
+                                          <Label fx:id="dateLabel1" text="Data">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="temperatureFiveDaysVBox" prefHeight="88.0" prefWidth="92.0" spacing="20.0">
+                                       <children>
+                                          <Label fx:id="temperatureLabel1" text="Temperatura">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="pressureFiveDaysVBox" prefHeight="88.0" prefWidth="76.0" spacing="20.0">
+                                       <children>
+                                          <Label fx:id="pressureLabel1" text="Ciśnienie">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="humidityFiveDaysVBox" prefHeight="200.0" prefWidth="80.0" spacing="20.0">
+                                       <children>
+                                          <Label fx:id="humidityLabel1" text="Wilgotność">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="windSpeedFiveDaysVBox" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+                                       <children>
+                                          <Label fx:id="windSpeedLabel1" text="Prędkość wiatru">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="cloudsFiveDaysVBox" prefHeight="88.0" prefWidth="90.0" spacing="20.0">
+                                       <children>
+                                          <Label fx:id="cloudsLabel1" text="Zachmurzenie">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox fx:id="weatherDescriptionFiveDaysVBox" prefHeight="88.0" prefWidth="157.0" spacing="20.0">
+                                       <children>
+                                          <Label fx:id="weatherDescriptionLabel1" text="Opis pogody">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="40.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <VBox maxHeight="1.7976931348623157E308" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.vgrow="SOMETIMES">
+         <children>
+            <TextField fx:id="filterInputtf" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="29.0" prefWidth="256.0" />
+            <ListView fx:id="listOfCities" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="758.0" prefWidth="256.0" VBox.vgrow="SOMETIMES" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>
